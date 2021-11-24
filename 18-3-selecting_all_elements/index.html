@@ -23,11 +23,12 @@
   // const myThirdDiv = document.querySelector("#myThirdDiv");
   // const myFourthDiv = document.querySelector("#myFourthDiv");
 
-  const divs = document.querySelectorAll(`div`)
-  divs.forEach((div, idx) => {
-    window[`div${idx+1}`] = div;
-    window[`div${idx+1}`].textContent = `im div number ${idx+1}`
+  document.querySelectorAll(`div`).forEach((div, idx) => {
+    window[`div${idx + 1}`] = div;
+    window[`div${idx + 1}`].textContent = `im div number ${idx + 1}`
   });
+
+  const [firstDiv, secondDiv, thirdDiv, forthDiv] = document.querySelectorAll(`div`);
 
   console.log(div1);
   console.log(div2);
