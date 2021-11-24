@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,
+initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Header</h1>
+  <p>Paragraph</p>
+  <a href="#">link</a>
+  <img src="" alt="" />
+  <div class="x">Div with a class</div>
+  <div id="y">Div with an id</div>
+  <input type="text" />
+  <input type="text" />
+  <input type="text" />
+</body>
+<script>
+  const h1 = document.getElementsByTagName(`h1`);
+  const p = document.getElementsByTagName(`p`);
+  const a = document.getElementsByTagName(`a`);
+  const img = document.getElementsByTagName(`img`);
+  const x = document.getElementsByClassName(`x`);
+  const y = document.getElementById(`y`);
+  const inputs = document.getElementsByTagName(`input`);
+
+  const h1_2 = document.querySelector(`h1`);
+  const p2 = document.querySelector(`p`);
+  const a2 = document.querySelector(`a`);
+  const img2 = document.querySelector(`img`);
+  const x2 = document.querySelector(`.x`);
+  const y2 = document.querySelector(`#y`);
+  const inputs2 = document.querySelectorAll(`input`);
+
+
+  console.log(h1);
+  console.log(p);
+  console.log(a);
+  console.log(img);
+  console.log(x);
+  console.log(y);
+  console.log(inputs);
+
+  console.log(h1_2);
+  console.log(p2);
+  console.log(a2);
+  console.log(img2);
+  console.log(x2);
+  console.log(y2);
+  console.log(inputs2);
+
+  const arrInputs = [...inputs];
+  arrInputs.forEach(input => {
+    console.log(input);
+  });
+
+  const arrInputs2 = [...inputs2];
+  arrInputs.forEach(input => {
+    console.log(input);
+  });
+</script>
+
+</html>
