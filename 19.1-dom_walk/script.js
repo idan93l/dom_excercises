@@ -18,4 +18,4 @@ title.innerHTML = `Master Of The Dom`;
 
 const p = document.querySelector(`p`);
 
-p.textContent = `I am Iron Man!!!!!!!`
+p.textContent = `I am Iron Man!!!`
