@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font-size</title>
+</head>
+
+<body>
+  <button class="increase">
+    <h2>+</h2>
+  </button>
+  <button class="decrease">
+    <h2>-</h2>
+  </button>
+  <h1>size</h1>
+</body>
+
+</html>
+
+<script>
+  const inc = document.querySelector(`.increase`)
+  const dec = document.querySelector(`.decrease`)
+  const h1 = document.querySelector(`h1`);
+  const h1Style = getComputedStyle(h1);
+  let h1Size = h1Style.fontSize;
+  // let h1SizeNumber = h1Size.split(``).splice(0, 2).join(``);
+  let h1SizeNumber = h1Size.replace(`px`, ``);
+  console.log(h1Size);
+  console.log(h1SizeNumber);
+  const changeSize = text => {
+    inc.addEventListener(`click`, () => {
+      if (text < 34) {
+        text++;
+        console.log(text);
+        h1.style.fontSize = `${text}px`;
+      }
+    });
+
+      dec.addEventListener(`click`, () => {
+        if (text > 31) {
+        text--;
+        console.log(text);
+        h1.style.fontSize = `${text}px`
+        }
+      });
+    }
+    changeSize(h1SizeNumber);
+</script>
