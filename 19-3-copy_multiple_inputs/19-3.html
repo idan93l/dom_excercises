@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copy Multiple Inputs</title>
+</head>
+
+<style>
+  body {
+    height: 40vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .inputContainer input {
+    height: 40px;
+    width: 40px;
+    margin-bottom: 20px;
+  }
+</style>
+
+<body>
+  <div class="text">
+    <h1>Text to copy:</h1>
+    <h3>123456</h3>
+  </div>
+  <div class="container">
+    <div class="inputContainer">
+      <input maxlength="1" pattern="[0-9]" class="i1" type="text">
+      <input maxlength="1" pattern="[0-9]" type="text">
+      <input maxlength="1" pattern="[0-9]" type="text">
+      <input maxlength="1" pattern="[0-9]" type="text">
+      <input maxlength="1" pattern="[0-9]" type="text">
+      <input maxlength="1" pattern="[0-9]" type="text">
+    </div>
+    <button>Verify</button>
+  </div>
+</body>
+
+<script>
+  const inputsContainer = document.querySelector("inputContainer");
+  const i1 = document.querySelector(".i1");
+  const inputsArr = document.querySelectorAll('input');
+  // console.log(i1);
+  i1.focus();
+  inputsArr.forEach((input, idx) => {
+    input.addEventListener('click', () => {
+      if (!input.value) {
+        const currentInput = [...inputsArr].find(input => {
+          return (!input.value)
+        });
+        currentInput.focus();
+      }
+    });
+
+    input.addEventListener('input', () => {
+      if (idx + 1 < inputsArr.length) {
+        inputsArr[idx + 1].focus();
+      }
+    })
+
+    input.addEventListener("paste", (event) => {
+      let clipboard = event.clipboardData.getData("text").split("");
+      paste(clipboard, idx);
+    });
+
+    function paste(clipboard, currentCell) {
+      const numbersToFill = clipboard.length - currentCell - 1;
+      for (let i = 0; i <= numbersToFill; i++) {
+        inputsArr[currentCell].value = clipboard[i];
+        currentCell++;
+      }
+    }
+  });
+  // });
+    // if (input.value) {
+      // inputsArr[idx + 1].focus();
+    // } else {
+      // input.addEventListener('click', () => {
+        // for (let i = idx; i >= 0; i--) {
+        //   if (input.value) {
+        //     inputsArr[i].focus();
+        //   }
+        // }
+      // });
+    // }
+    // input.addEventListener('click', () => {
+    //   i1.focus();
+    // });
+    // if (inputsArr[idx].value) {
+    //   inputsArr[idx].addEventListener('input', () => {
+    //     inputsArr[idx+1];
+    //   });
+    // }
+</script>
+
+</html>
