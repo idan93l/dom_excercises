@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Area</title>
+</head>
+
+<body>
+  <h2>Show me (in words) what you got!</h2>
+  <form>
+    <textarea name="message" rows="15"
+      cols="45"></textarea>
+    </form>
+    <button>Click Here!</button>
+    <p></p>
+</body>
+
+</html>
+
+<script>
+  const clickHere = document.querySelector('button');
+  let alertion = document.querySelector('p');
+  const texty = document.querySelector('textarea');
+  clickHere.addEventListener('click', () => {
+    let text = document.querySelector('textarea').value;
+    // console.log(text.length);
+    if (text.length < 100) {
+      alertion.textContent = 'Not enough characters!';
+      alertion.style.color = 'red'
+    } else {
+      alertion.textContent = 'You showed me what you got!';
+      alertion.style.color = 'green'
+    }
+  })
+
+  texty.addEventListener('click', () => {
+    alertion.textContent = '';
+  })
+</script>
