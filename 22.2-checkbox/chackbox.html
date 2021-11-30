@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Box</title>
+</head>
+
+<style>
+  body {
+    height: 95vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  input {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+  }
+
+  div {
+    display: none;
+    margin-bottom: 250px;
+  }
+</style>
+
+<body>
+  <div>
+    <iframe src="https://giphy.com/embed/AcfTF7tyikWyroP0x7" width="550px" height="300" frameBorder="0"
+      class="giphy-embed" allowFullScreen></iframe>
+    <p><a href="https://giphy.com/gifs/disneyplus-the-mandalorian-mando-themandalorian-AcfTF7tyikWyroP0x7"></a>
+    </p>
+  </div>
+
+  <input type="checkbox">
+</body>
+</html>
+
+<script>
+
+  const picture = document.querySelector('div');
+  const checkbox = document.querySelector('input');
+
+  checkbox.addEventListener('click', () => {
+    checkbox.checked === true
+      ? picture.style.display = 'block'
+      : picture.style.display = 'none'
+})
+</script>
