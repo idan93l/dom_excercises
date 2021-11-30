@@ -38,21 +38,21 @@
   <h1>Welcome to Guess My Letter</h1>
   <div class="randomLetter">?</div>
   <h3 class="message"></h3>
-  <h2>Keys guessed</h2>
+  <h2 class="keysGuessed">Keys guessed</h2>
   <h3 class="guessedLetters"></h3>
-  <button>Yes</button>
+  <button>yes!</button>
 </body>
 
 </html>
 
 <script>
-  let randomLetter = document.querySelector('.randomLetter');
-  let message = document.querySelector('.message');
-  let guessedLetters = document.querySelector('.guessedLetters');
-  let button = document.querySelector('button');
+  const randomLetter = document.querySelector('.randomLetter');
+  const message = document.querySelector('.message');
+  const guessedLetters = document.querySelector('.guessedLetters');
+  const button = document.querySelector('button');
+  const keysGuessed = document.querySelector('.keysGuessed')
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
-  // let randomizer = alphabet[Math.floor(Math.random() * alphabet.length)];
-  let randomizer = 'a';
+  const randomizer = alphabet[Math.floor(Math.random() * alphabet.length)];
   let letterArray = [];
 
   function game(e) {
@@ -63,6 +63,8 @@
         message.style.color = 'green';
         message.textContent = 'Right letter!';
         button.style.display = 'block';
+        guessedLetters.textContent = '';
+        keysGuessed.textContent = 'Would you like to play again?';
         document.body.removeEventListener('keypress', game);
       } else {
         if (letterArray.includes(e.key)) {
