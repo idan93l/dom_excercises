@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms</title>
+</head>
+
+<style>
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+  }
+
+  input {
+    margin: 5px;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  button {
+    display: none;
+  }
+
+</style>
+
+<body>
+  <form>
+    <input class="fullName" name="fullName" type="text" value="Idan Lev" placeholder="Full name" onfocus="this.placeholder=``"
+      onblur="this.placeholder=`Full name`">
+
+    <input class="age" name="age" type="number" placeholder="Age" value="28" onfocus="this.placeholder=``"
+      onblur="this.placeholder=`Age`">
+
+    <input class="email" name="email" type="email" value="idan@gmail.com" placeholder="Email Address"
+      onfocus="this.placeholder=``" onblur="this.placeholder=`Email Address`">
+    <input class="submit" type="submit">
+  </form>
+  <div>
+    <h4 class="fullNameText"></h4>
+    <h4 class="ageText"></h4>
+    <h4 class="emailText"></h4>
+    <button>Verify</button>
+  </div>
+</body>
+
+</html>
+
+<script>
+  let fullName = document.querySelector('.fullName');
+  let age = document.querySelector('.age');
+  let email = document.querySelector('.email');
+  let form = document.querySelector('form');
+  let fullNameText = document.querySelector('.fullNameText');
+  let ageText = document.querySelector('.ageText');
+  let emailText = document.querySelector('.emailText');
+  let button = document.querySelector('button');
+
+  form.addEventListener('submit', (e) => {
+    alert("are you sure?");
+    fullNameText.textContent = `Full Name: ${fullName.value}`;
+    ageText.textContent = `Age: ${age.value}`;
+    emailText.textContent = `Email adress: ${email.value}`;
+    button.style.display = 'block'
+    e.preventDefault();
+  });
+
+  button.addEventListener('click', () => {
+    alert ('thank you for registering!')
+  })
+</script>
