@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/0e9fc1a575.js" crossorigin="anonymous"></script>
+  <title>Useless</title>
+</head>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  input {
+    text-align: center;
+    margin-bottom: 10px;
+    width: 200px;
+  }
+</style>
+
+<body>
+
+  <input type="text" placeholder="How much money do you desire?" onfocus="this.placeholder=``"
+    onblur="this.placeholder=`How much money do you desire?`">
+
+  <button>Make it rain!</button>
+
+  <div></div>
+
+</body>
+
+<script>
+
+  let money = document.querySelector('div');
+
+  const add = document.querySelector('button');
+
+  let input = document.querySelector(`input`);
+
+  add.addEventListener('click', () => {
+    let inputValue = input.value;
+    if (isNaN(inputValue)) {
+      alert('please enter a valid number!')
+    }
+    else {
+      for (let i = 0; i < +inputValue; i++) {
+        money.innerHTML += "<img src='../21-5-emojis/money_bag.jpg' height='80px'>";
+      }
+    }
+  });
+  
+  input.addEventListener('click', () => {
+    money.textContent = ''
+    input.value = '';
+  });
+
+</script>
+
+</html>
