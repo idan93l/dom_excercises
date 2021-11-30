@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess My Letter</title>
+</head>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .randomLetter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    font-size: 20px;
+    width: 23px;
+  }
+
+  .message {
+    color: red;
+  }
+
+  button {
+    display: none;
+  }
+</style>
+
+<body>
+  <h1>Welcome to Guess My Letter</h1>
+  <div class="randomLetter">?</div>
+  <h3 class="message"></h3>
+  <h2>Keys guessed</h2>
+  <h3 class="guessedLetters"></h3>
+  <button>Yes</button>
+</body>
+
+</html>
+
+<script>
+  let randomLetter = document.querySelector('.randomLetter');
+  let message = document.querySelector('.message');
+  let guessedLetters = document.querySelector('.guessedLetters');
+  let button = document.querySelector('button');
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  // let randomizer = alphabet[Math.floor(Math.random() * alphabet.length)];
+  let randomizer = 'a';
+  let letterArray = [];
+
+  function game(e) {
+    message.textContent = '';
+    if (alphabet.includes(e.key.toLowerCase())) {
+      if (e.key === randomizer) {
+        randomLetter.textContent = randomizer;
+        message.style.color = 'green';
+        message.textContent = 'Right letter!';
+        button.style.display = 'block';
+        document.body.removeEventListener('keypress', game);
+      } else {
+        if (letterArray.includes(e.key)) {
+          message.textContent = `${e.key} has already been guessed!`
+        } else {
+          letterArray.push(e.key);
+          guessedLetters.textContent = letterArray.join(',');
+          message.textContent = 'wrong guess, try again...';
+        }
+      }
+    } else {
+      message.textContent = 'Please enter a valid letter';
+    }
+  }
+
+  document.body.addEventListener('keypress', game);
+
+  button.addEventListener('click', () => {
+    window.location.reload();
+  })
+</script>
