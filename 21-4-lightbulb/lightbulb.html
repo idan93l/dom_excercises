@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lightbulb</title>
+</head>
+
+<style>
+  body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+  }
+
+  div {
+    background-image: url(Lightbulb_On_Off_clip_art_hight.png);
+  }
+
+  .bulb {
+    background: url('Lightbulb_On_Off_clip_art_hight.png') no-repeat;
+    background-position-x: -321px;
+    width: 279px;
+    height: 450px;
+  }
+
+  .lightOn {
+    background-position-x: 0;
+  }
+</style>
+
+<body>
+  <div class="bulb lightOn"></div>
+</body>
+
+</html>
+
+<script>
+  const bulb = document.querySelector('.bulb');
+  const off = '';
+  const on = '-321.8px';
+
+  bulb.addEventListener("click", () => {
+    bulb.style.backgroundPositionX === on ?
+      bulb.style.backgroundPositionX = off
+      : bulb.style.backgroundPositionX = on;
+  });
+</script>
