@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Forbidden Bottom</title>
+</head>
+<body>
+</body>
+</html>
+
+<script>
+  let div = document.createElement('div');  
+
+  let button = document.createElement('button');
+  button.style.backgroundColor = 'red'
+  button.style.color = 'white'
+  button.style.fontSize = '30px'
+  button.style.borderRadius = "10px"
+  button.textContent = `Don't press on the button`;
+
+  document.body.appendChild(div)
+  document.body.appendChild(button)
+  document.body.style.height = '95vh';
+  document.body.style.width = '100vw';
+  document.body.style.display = 'flex';
+  document.body.style.justifyContent = 'flex-end';
+  document.body.style.alignItems = 'center';
+  document.body.style.flexDirection = 'column'
+  document.body.style.overflow = 'hidden';
+
+  button.addEventListener('click', () => {
+    div.innerHTML = '<iframe src="https://giphy.com/embed/SwxXCZezUX1f19pNcH" width="800" height="500" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/bigbangtheory-season-2-episode-11-big-bang-theory-SwxXCZezUX1f19pNcH"></a></p>'
+    button.textContent = 'Shame on you!'
+  });
+</script>
