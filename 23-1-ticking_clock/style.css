@@ -1,0 +1,14 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  font-size: 100px;
+  background-color: rgb(233, 99, 117);
+  color: rgb(78, 23, 40);
+  @import url('http://fonts.cdnfonts.com/css/minecraft-3');
+  font-family: 'Minecraft', sans-serif;
+  overflow: hidden;
+}
