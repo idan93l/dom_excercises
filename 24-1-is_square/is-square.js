@@ -5,7 +5,7 @@ function Square(a, b, c, d) {
   this.d = d;
 }
 
-let sqr = new Square(2, 3, 2, 3);
+const sqr = new Square(2, 3, 2, 3);
 
 Square.prototype.isSquare = function() {
     if(this.a === this.c && this.b === this.d) {
