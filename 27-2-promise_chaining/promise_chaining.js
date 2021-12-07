@@ -1,31 +1,22 @@
-const makeAllCaps = (array) => {
-  return new Promise((resolve, reject) => {
+const array = ["hey", "you", "are", "beautiful"];
+
+const array2 = ["hey", "you", 56, "beautiful"];
+
+function makeAllCaps(array) {
+  new Promise((resolve, reject) => {
     const capitalizedArray = array.map((word) => {
-      if (typeof word !== 'string') {
-        reject();
+      if (typeof word !== "string") {
+        reject("ERORR!");
       }
       return word.toUpperCase();
     });
     resolve(capitalizedArray);
-  });
-};
-
-array = ['hey', 'you', 'are', 'beautiful']
-
-array2 = ['hey', 'you', 56, 'beautiful']
-
-makeAllCaps(array)
-  .then((res) =>{
-    console.log(res.sort());
   })
-  .catch(() => {
-    console.log('error!');
-  })
+    .then((res) => res.sort())
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err))
+}
 
-makeAllCaps(array2)
-  .then((res) =>{
-    console.log(res.sort());
-  })
-  .catch(() => {
-    console.log('error!');
-  })
+makeAllCaps(array);
+
+makeAllCaps(array2);
