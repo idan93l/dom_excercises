@@ -29,5 +29,3 @@ makeAllCaps(array2)
   .catch(() => {
     console.log('error!');
   })
-
-  381244006004
