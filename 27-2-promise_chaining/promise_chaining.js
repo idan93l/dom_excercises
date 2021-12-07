@@ -12,7 +12,7 @@ const makeAllCaps = (array) => {
 
 array = ['hey', 'you', 'are', 'beautiful']
 
-array2 = ['hey', 56, 'are', 'beautiful']
+array2 = ['hey', 'you', 56, 'beautiful']
 
 makeAllCaps(array)
   .then((res) =>{
@@ -29,3 +29,5 @@ makeAllCaps(array2)
   .catch(() => {
     console.log('error!');
   })
+
+  381244006004
