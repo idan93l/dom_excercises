@@ -1,4 +1,3 @@
-// https://api.github.com/users/{username}
 const searchButton = document.querySelector(".searchButton");
 const profilePicture = document.querySelector(".profilePicture");
 const userUrl = document.querySelector(".userUrl");
@@ -6,9 +5,6 @@ const repos = document.querySelector(".repos");
 const headers = document.querySelector(".headers");
 userNameInput = document.querySelector(".userName");
 userNameInput.focus();
-
-const jokeGenerator = document.querySelector(".jokeGenerator");
-const URL = "https://api.jokes.one/jod";
 
 const getUserName = () => {
   userToSearch = userNameInput.value;
