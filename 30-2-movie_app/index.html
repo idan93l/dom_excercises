@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+  <title>Github movie finder</title>
+</head>
+
+<body class="flex">
+  <div class="flex container">
+    <div class="inputAndButtonContainer">
+      <input class="movieName" type="text" placeholder="Enter movie name" onfocus="this.placeholder=''"
+        onblur="this.placeholder='Enter movie name'">
+      <button class="searchButton">search</button>
+    </div>
+    <div class="flex fetchedMovie">
+      <div class="poster"></div>
+      <div class="flex content">
+        <div class="headers">
+          <h1 class="textmovie">movie name:</h1>
+          <h1 class="textRepos">Repositories:</h1>
+        </div>
+      <div class="flex data">
+        <div class="movieUrl"></div>
+        <div class="repos"></div>
+      </div>
+    </div>
+    </div>
+  </div>
+</body>
+
+</html>

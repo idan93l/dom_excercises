@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(5, 255, 234);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+input {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-large;
+  text-align: center;
+  border-radius: 10px;
+  border-color: rgba(192, 192, 192, 0.692);
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  height: 80%;
+  width: 70%;
+  /* border: 1px solid red; */
+  justify-content: flex-start;
+}
+
+.searchButton {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-large;
+  text-align: center;
+  border-radius: 10px;
+  border-color: rgba(192, 192, 192, 0.692);
+  background-color: rgb(202, 21, 75);
+  color: aliceblue;
+}
+
+.fetchedmovie {
+  height: 80%;
+  margin-top: 3%;
+  /* border: 1px solid red; */
+  justify-content: space-between;
+}
+
+.fetchedmovie a {
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgb(202, 21, 75);
+}
+
+.fetchedmovie a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  flex-direction: row;
+}
+
+.headers {
+  display: none;
+}
+
+.data {
+  align-items: flex-end;
+}
