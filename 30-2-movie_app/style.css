@@ -19,6 +19,10 @@ input {
   border-color: rgba(192, 192, 192, 0.692);
 }
 
+h1 {
+  font-size: 20px;
+}
+
 .flex {
   display: flex;
   justify-content: center;
@@ -27,10 +31,11 @@ input {
 }
 
 .container {
-  height: 80%;
-  width: 70%;
+  height: 100%;
+  width: 100%;
   /* border: 1px solid red; */
   justify-content: flex-start;
+  margin-top: 5%;
 }
 
 .searchButton {
@@ -43,16 +48,10 @@ input {
   color: aliceblue;
 }
 
-.fetchedmovie {
+.fetchedMovie {
   height: 80%;
   margin-top: 3%;
-  /* border: 1px solid red; */
-  justify-content: space-between;
-}
-
-.fetchedmovie a {
-  font-size: 30px;
-  font-weight: 600;
+  justify-content: space-evenly;
   text-decoration: none;
   color: rgb(202, 21, 75);
 }
@@ -65,10 +64,15 @@ input {
   flex-direction: row;
 }
 
+.data {
+  justify-content: flex-start;
+}
+
 .headers {
   display: none;
 }
 
 .data {
+  height: 100%;
   align-items: flex-end;
 }
