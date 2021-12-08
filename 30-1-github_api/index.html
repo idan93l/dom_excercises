@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,18 +9,28 @@
   <script src="./script.js" defer></script>
   <title>Github User finder</title>
 </head>
+
 <body class="flex">
-<div class="flex container">
-  <div class="inputAndButtonContainer">
-  <input class="userName" type="text" placeholder="Enter username" onfocus="this.placeholder=''" 
-  onblur="this.placeholder='Enter username'">
-  <button class="searchButton">search</button>
-</div>
-<div class="profilePicture"></div>
-<div class="userUrl"></div>
-<div class="repos"></div>
-<div class="followers"></div>
-<div class="following"></div>
-</div>
+  <div class="flex container">
+    <div class="inputAndButtonContainer">
+      <input class="userName" type="text" placeholder="Enter username" onfocus="this.placeholder=''"
+        onblur="this.placeholder='Enter username'">
+      <button class="searchButton">search</button>
+    </div>
+    <div class="flex fetchedUser">
+      <div class="profilePicture"></div>
+      <div class="flex content">
+        <div class="headers">
+          <h1 class="textUser">User name:</h1>
+          <h1 class="textRepos">Repositories:</h1>
+        </div>
+      <div class="flex data">
+        <div class="userUrl"></div>
+        <div class="repos"></div>
+      </div>
+    </div>
+    </div>
+  </div>
 </body>
+
 </html>

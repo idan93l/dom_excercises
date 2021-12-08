@@ -27,10 +27,10 @@ input {
 }
 
 .container {
-  height: 70%;
+  height: 80%;
   width: 70%;
   /* border: 1px solid red; */
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .searchButton {
@@ -41,4 +41,34 @@ input {
   border-color: rgba(192, 192, 192, 0.692);
   background-color: rgb(202, 21, 75);
   color: aliceblue;
+}
+
+.fetchedUser {
+  height: 80%;
+  margin-top: 3%;
+  /* border: 1px solid red; */
+  justify-content: space-between;
+}
+
+.fetchedUser a {
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgb(202, 21, 75);
+}
+
+.fetchedUser a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  flex-direction: row;
+}
+
+.headers {
+  display: none;
+}
+
+.data {
+  align-items: flex-end;
 }

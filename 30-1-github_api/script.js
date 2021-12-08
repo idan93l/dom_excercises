@@ -3,8 +3,7 @@ const searchButton = document.querySelector(".searchButton");
 const profilePicture = document.querySelector(".profilePicture");
 const userUrl = document.querySelector(".userUrl");
 const repos = document.querySelector(".repos");
-const followers = document.querySelector(".followers");
-const following = document.querySelector("following");
+const headers = document.querySelector(".headers");
 userNameInput = document.querySelector(".userName");
 userNameInput.focus();
 
@@ -25,17 +24,23 @@ const fetchUser = async () => {
       await fetch(`https://api.github.com/users/${userToSearch}`)
     ).json();
     const reposData = await (await fetch(data.repos_url)).json();
-    profilePicture.innerHTML = `<img src="${data.avatar_url}" alt="_blank">`;
-    userUrl.innerHTML = `<a href="${data.html_url} alt="_blank"">${userToSearch}</a>`;
-    repos.innerHTML = `<a href="${reposData}" alt="_blank">${reposData.length}</a>`;
-    console.log(data);
+    profilePicture.innerHTML = `<img src="${data.avatar_url}">`;
+    userUrl.innerHTML = `<a href="${data.html_url}" target="_blank">${userToSearch}</a>`;
+    repos.innerHTML = `<a href="#">${reposData.length}</a>`;
+    headers.style.display = "block";
   } catch (err) {
-    profilePicture.innerHTML = '';
-    userUrl.innerHTML ='';
-    repos.innerHTML ='';
+    profilePicture.innerHTML = "";
+    userUrl.innerHTML = "";
+    repos.innerHTML = "";
+    headers.style.display = "none";
     console.log(err);
   }
 };
 
 searchButton.addEventListener("click", fetchUser);
-// searchButton.addEventListener("click", getUserName);
+
+userNameInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    fetchUser();
+  }
+});
